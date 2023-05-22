@@ -1,0 +1,151 @@
+.carousellll {}
+.container--carosell {
+  width: 80%;
+  align-items: center;
+}
+
+  /* .container-card-image {
+    border: 0.5px solid black;
+    width: 58%;
+    height: 16vw;
+    overflow: hidden;
+    border-radius: 15px;
+  } */
+
+
+
+
+.container-card-image {
+    margin-left: 1%;
+   
+    width: 70%;
+    height: 16vw;
+    overflow: hidden;
+    margin-top: 2px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 11px 0px #0b275a;
+}
+
+
+
+
+
+
+
+.image-slider-card {
+  height: 100%;
+  width: 100%;
+}
+
+.carosel {}
+
+.container-card-text {
+  width: 70%;
+  font-size: 1vw;
+  background-color: #6363F6;
+  border: 1px solid #6363F6;
+  border-radius: 18px;
+  text-align: center;
+  color: white;
+  margin-top: 1.5vw;
+  margin-left: 0%;
+}
+
+
+.links-text{
+   font-size: 1vw;
+    color: white;
+    text-decoration: none;
+ 
+}
+
+.links-text:hover{
+  cursor: pointer;
+}
+
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  padding-left: 5%;
+}
+
+.container--carosell {
+  width: 80%;
+  align-items: center;
+  margin-left: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slick-prev,
+.slick-next {
+  display: block;
+  pointer-events: auto;
+}
+
+.slick-prev:hover {
+  background-image: url('../images/arrowsleft.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.slick-next:hover {
+  z-index: 2;
+  background-image: url('../images/arrowsright.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: none;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  line-height: 1;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+
+.slick-prev {
+  
+  background-image: url('../images/arrowsleft.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.slick-next {
+  right: -25px;
+  background-image: url('../images/arrowsright.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}

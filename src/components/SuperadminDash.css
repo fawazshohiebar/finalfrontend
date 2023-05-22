@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .navbar-link1 {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .navbar-link1:focus {
+    background: #ccc;
+    color: red;
+  }
+  
+  .navbar-icon {
+    margin-right: 5px;
+    color: #777;
+  }
+  
