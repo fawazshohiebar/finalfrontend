@@ -4,39 +4,66 @@ import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import { useParams } from 'react-router-dom';
 
 function DateTimeComponent() {
-  const [selectedDate, setSelectedDate] = useState(null);
+  const { id } = useParams();
+  console.log(id);
+  const [selectedDate, setSelectedDate] = useState();
+  const [selectedDatee,setselectedDatee]=useState()
+  const userID = sessionStorage.getItem('userID');
+  const[user,setuser]=useState(userID)
+  const handleDateChange = (date) => {
+    if (date) {
+      setSelectedDate(date.toLocaleString());
+      setselectedDatee(date)
 
-  const handleDateChange = async (date) => {
-    setSelectedDate(date);
-    console.log(date.toLocaleString());
+      console.log(date.toLocaleString());
+    }
+  };
+  
 
+  const Book = async () => {
+    if(!selectedDate){
+      toast.error("please  enter the date ");
+    } else if(!user){
+      toast.error("please  Sign in ");
+    }
+    else{
     try {
-      const response = await axios.post('http://localhost:4000/bookings', {
-        date: date.toLocaleString(), // Convert the date to local string format
+      const response = await axios.post('http://localhost:4000/booking', {
+        date: selectedDate,
+        User_ID: user,
+        Doctor_ID: id,
       });
 
-      toast.success('Appointment booked successfully!');
+      toast.success('Appointment booked successfully!', { position: toast.POSITION.TOP_RIGHT });
       console.log(response.data);
     } catch (error) {
       toast.error(error.response.data.message);
       console.error(error.response.data);
     }
+  }
   };
 
   return (
-    <div>
+    <div className='datecom'>
+      <ToastContainer />
+
       <DatePicker
         className='button-ordering'
-        placeholderText='Book an appointment'
-        selected={selectedDate}
+        placeholderText='Pick a Date'
+        selected={selectedDatee}
         onChange={handleDateChange}
         showTimeSelect
         timeFormat='HH:mm'
         timeIntervals={30}
         dateFormat='MMMM d, yyyy h:mm aa'
+        minTime={new Date().setHours(9, 0)} // Set the minimum time to 9:00 am
+        maxTime={new Date().setHours(17, 0)} // Set the maximum time to 5:00 pm
       />
+      <button className='booking-button' onClick={() => Book()}>Book the appointment</button>
     </div>
   );
 }

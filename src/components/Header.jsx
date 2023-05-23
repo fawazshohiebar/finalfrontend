@@ -7,9 +7,23 @@ import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
+
 import { Link } from 'react-router-dom';
 
 function  Header() {
+  const userID = sessionStorage.getItem('userID');
+
+
+
+  const handleLogout = () => {
+    // Clear the session storage
+    sessionStorage.clear();
+    
+    // Reload the page or perform any additional logic
+    window.location.reload();
+  };
+
+
 
   const nav = useNavigate()
   const location = useLocation();
@@ -51,8 +65,14 @@ function  Header() {
     </a>    
     
              </div>
-    <div> <h2 className='header-color'> Sign         in</h2> </div>
-  </div>
+             {userID ? (
+          <h2 className='header-color' onClick={handleLogout}>Sign out</h2>
+        ) : (
+          <Link to="/Login" className='header-color'>
+            <h2 className='header-color'>Sign in</h2>
+          </Link>
+        )}
+          </div>
   )
 }
 

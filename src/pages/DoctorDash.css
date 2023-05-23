@@ -1,0 +1,36 @@
+.card-doctor {
+    position: relative;
+    display: flex;
+    
+  
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+  
+    background: #0000FF;
+    
+margin-bottom: 1vw;
+  
+  }
+  
+  
+  .cardinfo{
+    color: white;
+ font-size: 1.2vw;
+}
+  .content{}
+
+  .header-card{
+    text-align: left;
+    color: white;
+  }
+  .container-card-doctordash{
+    display: flex;
+    flex-direction: row;
+  gap: 1vw;
+    flex-wrap: wrap;
+  padding-left: 5%;  
+  height: auto;
+  }

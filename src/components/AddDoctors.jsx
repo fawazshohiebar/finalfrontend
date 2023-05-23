@@ -275,8 +275,8 @@ function AddDoctors() {
 
           <label>Pick the category</label>
           <div className='category-buttons'>
-            <button onClick={getSpecielties}>Specielties</button>
-            <button onClick={getMedicalServices}>Medical Services</button>
+            <button onClick={getSpecielties}>Medical Services</button>
+            <button onClick={getMedicalServices}>Specielties</button>
           </div>
 
           <div className='subcategory-list'>

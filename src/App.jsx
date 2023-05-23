@@ -3,6 +3,8 @@ import './App.css';
 import semiheader from "../src/images/semiheader.jpeg"
 
 import { Route, Routes,BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import "slick-carousel/slick/slick.css";
@@ -20,6 +22,7 @@ import DoctorPage from './components/DoctorPage';
 import Dashboard from './pages/Dashboard';
 import AddDoctors from './components/AddDoctors';
 import Login from './components/Login';
+import DoctorDashboard from './pages/DoctorDashboard';
 function App() {
 
 
@@ -28,7 +31,6 @@ function App() {
   return (
     <div className="App">
  
-
 
 
 
@@ -47,6 +49,7 @@ function App() {
         <Route path='/Dashboard' element={<Dashboard />} />
  <Route path='/AddDoctors' element={<AddDoctors />} />
  <Route path='/Login' element={<Login />} />
+ <Route path='/DoctorDash' element={<DoctorDashboard />} />
 
     </Routes>
     </BrowserRouter>
