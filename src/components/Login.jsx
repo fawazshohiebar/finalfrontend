@@ -4,6 +4,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 function Login() {
   const flipCard = () => {
@@ -62,7 +63,10 @@ const Register=async()=>{
 }}
 
   return (
+    <div>
+      <Header/>
     <div className='container-login-registration'>
+     
       <ToastContainer />
       <div className='flip-card'>
         <div className='flip-card-inner'>
@@ -141,6 +145,7 @@ const Register=async()=>{
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

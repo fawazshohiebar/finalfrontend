@@ -50,12 +50,107 @@
   }
   
   
-  .container-alldoctors{
-    margin-top: 10vw;
+  .container-alldoctors {
+    padding-top: 5vw;
+ 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
     height: auto;
-    margin-bottom: 10vw;
-  }
+ 
+}
+
+
+.text-docaration{
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsiveeeeeeeee */
+/* On screens that are 992px wide or less, the background color is blue */
+@media screen and (max-width: 992px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* On screens that are 600px wide or less, the background color is olive */
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+
+
+  .container-specielties {
+    width: 80%;
+    height: 84vw;
+    margin-left: 10%;
+}
+
+.container-card-doctors-text {
+  padding-left: 2%;
+  width: 70%;
+  font-size: 3vw;
+  background-color: #3281B1;
+  border: 1px solid #3281B1;
+  border-radius: 4vw;
+  text-align: left;
+  color: white;
+
+}
+
+.border-under-title {
+  border-bottom: 4px solid #3281B1;
+  width: 20%;
+  height: 10vw;
+}
+.title-specielties {
+  color: #3281B1;
+  font-size: 3.5vw;
+  text-align: center;
+}
+.image-boxshadow-doctors-services{
+  border-radius: 4vw;
+  width: 70%;
+  height: 100%;
+  box-shadow: 0px 0px 11px 0px #0b275a;
+}
+
+.container-alldoctors {
+  padding-top: 5vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto;
+}
+}

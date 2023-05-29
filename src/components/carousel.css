@@ -147,7 +147,7 @@
 
 
 
-/* responsiveeeeeeee */
+/*   */
 
 @media screen and (max-width: 992px) {
 
@@ -218,41 +218,12 @@
 }
 
 
-
-
-
-.footer-submit {
-  width: 14.5vw;
-  background: white;
-  font-size: 2.5vw;
-  border: 1px solid black;
-  border-radius: 15px;
-  margin-left: 25vw;
-}
-.footer-leftdiv {
-  width: 80%;
-  /* margin-left: 5%; */
-  padding-left: 3%;
-}
 .fourth-section {
   height: 76vw;
 }
 
-.footer-label {
-  color: white;
-  font-size: 2.5vw;
-}
-.foooter-text {
-  color: white;
-  font-size: 3.8vw;
-}
 
 
-#message {
-  width: 66%;
-  /* resize: vertical; */
-  height: 15vw;
-}
 
 
 }
@@ -334,47 +305,6 @@
 }
 
 
-#message {
-  width: 79%;
-  /* resize: vertical; */
-  height: 15vw;
-}
-.footer-label {
-  color: white;
-  font-size: 3.5vw;
-}
-.footer-leftdiv {
-  width: 70%;
-  margin-left: 0%;
-  padding-left: 3%;
-}
-.footer-right-text {
-  color: white;
-  font-size: 3.3vw;
-  position: relative;
-  padding-top: 30%;
-  /* padding-left: 25%; */
-  width: 26%;
-}
-.footer-leftdiv {
-  width: 59%;
-  /* margin-left: 5%; */
-  padding-left: 3%;
-}
-.footer-submit {
-  width: 23.5vw;
-  background: white;
-  font-size: 4.5vw;
-  border: 1px solid black;
-  border-radius: 15px;
-  margin-left: 34vw;
-}
-.footer-section {
-  height: 43vw;
-  background-color: #3281B1;
-  display: flex;
-  flex-direction: row;
-}
 
 
 }

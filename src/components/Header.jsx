@@ -59,10 +59,10 @@ function  Header() {
      { <Link   className='inner-header-link' to="/"><p>Home</p>
     </Link> 
     }
-     <a className='inner-header-link' onClick={()=>getPath("medicalservices")}> <p >Medical services</p></a>  
+     <a className='inner-header-link' onClick={()=>getPath("medicalservices")}> <p style={{ cursor: 'pointer' }}> Medical services</p></a>  
      
-       <a  className='inner-header-link'  onClick={()=>getPath("specielties")} > <p>Specialties
-    </p>
+       <a  className='inner-header-link'  onClick={()=>getPath("specielties")} > <p style={{ cursor: 'pointer' }}> Specialties
+       </p>
     </a>    
     
              </div>

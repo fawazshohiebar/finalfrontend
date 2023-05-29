@@ -13,18 +13,32 @@ export default function AllDoctors() {
   const { id } = useParams();
   console.log(id)
 
+  const [empty,setempty]=useState(true)
 
 const [alldoctors,setalldoctors]=useState()
 
-  const getalldoctors=async()=>{
-    const response =await  axios.get(`http://localhost:4000/doctor/bysubcategory/${id}`)
-    console.log(response.data)
-    setalldoctors(response.data)
+const getalldoctors = async () => {
+  const response = await axios.get(`http://localhost:4000/doctor/bysubcategory/${id}`);
+  console.log(response.data);
+
+  if (response.data.length === 0) {
+    // Array is empty
+    // Handle the case when there are no doctors
+    console.log('No doctors found.');
+    setempty(true)
+    
+    // You can display a message or handle the empty array case in any way you prefer
+  } else {
+    // Array is not empty
+    setempty(false)
+    setalldoctors(response.data);
   }
+};
+
 
     useEffect(() => {
     getalldoctors();
-  }, []);
+  }, [empty]);
 
   return (
 
@@ -36,6 +50,11 @@ const [alldoctors,setalldoctors]=useState()
 
 
 
+{empty ? (
+            <h1>There are no doctors yet.</h1>
+          ) : (
+
+<div>
 
 
 <div className='title-specielties-container'>
@@ -70,7 +89,7 @@ const [alldoctors,setalldoctors]=useState()
 </div>
 <br />
 
-<Link  to={`/DoctorPage/${hourframe._id}`}>
+<Link className='text-docaration'  to={`/DoctorPage/${hourframe._id}`}>
 
 <div className='buttun-center'>
 <div className="container-card-doctors-text">
@@ -89,7 +108,8 @@ const [alldoctors,setalldoctors]=useState()
 
 
     </div>
-
+    </div>
+)}
     </div>
 
   )

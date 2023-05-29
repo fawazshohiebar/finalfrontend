@@ -5,6 +5,7 @@ import semiheader from "../images/semiheader.jpeg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import arrow from "../images/arrow-right.png";
 
 export const Carousel = () => {
   const [deviceType, setDeviceType] = useState(null);
@@ -18,63 +19,68 @@ export const Carousel = () => {
 
   useEffect(() => {
     getSpecielties();
-    handleResize(); // Call the handleResize function when the component mounts
-    window.addEventListener("resize", handleResize); // Add event listener to handle window resize
-    return () => {
-      window.removeEventListener("resize", handleResize); // Clean up the event listener when the component unmounts
-    };
   }, []);
 
-  const handleResize = () => {
-    const screenWidth = window.innerWidth;
-    let newDeviceType = null;
+  // const handleResize = () => {
+  //   const screenWidth = window.innerWidth;
+  //   let newDeviceType = null;
 
-    if (screenWidth <= 768) {
-      newDeviceType = "mobile";
-    } else if (screenWidth <= 1024) {
-      newDeviceType = "tablet";
-    } else {
-      newDeviceType = "desktop";
-    }
+  //   if (screenWidth <= 768) {
+  //     newDeviceType = "mobile";
+  //   } else if (screenWidth <= 1024) {
+  //     newDeviceType = "tablet";
+  //   } else {
+  //     newDeviceType = "desktop";
+  //   }
 
-    setDeviceType(newDeviceType);
-  };
+  //   setDeviceType(newDeviceType);
+  // };
 
-  const getSlidesToShow = () => {
-    if (deviceType === "mobile") {
-      return 1;
-    } else if (deviceType === "tablet") {
-      return 2;
-    } else {
-      return 3;
-    }
-  };
+  // const getSlidesToShow = () => {
+  //   if (deviceType === "mobile") {
+  //     return 1;
+  //   } else if (deviceType === "tablet") {
+  //     return 2;
+  //   } else {
+  //     return 3;
+  //   }
+  // };
 
-  const settings = {
-    arrows: true,
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: getSlidesToShow(),
-    slidesToScroll: 1,
-  };
+  // const settings = {
+  //   arrows: true,
+  //   dots: true,
+  //   infinite: false,
+  //   speed: 500,
+  //   slidesToShow: getSlidesToShow(),
+  //   slidesToScroll: 1,
+  // };
+
+  //   <Slider {...settings}>
+  //   {specielties.map((hourframe, index) => (
+  //     <div className="card" key={index}>
+  //       <div className="container-card-image">
+  //         <img className="image-slider-card" src={hourframe.image.url} alt={hourframe.title} />
+  //       </div>
+  //       <div className="container-card-text">
+  //         <Link className="links-text" to={`/AllDoctors/${hourframe._id}`}>
+  //           <p className="links-text">{hourframe.title}</p>
+  //         </Link>
+  //       </div>
+  //     </div>
+  //   ))}
+  // </Slider>
 
   return (
-    <div className="container--carosell">
-      <Slider {...settings}>
-        {specielties.map((hourframe, index) => (
-          <div className="card" key={index}>
-            <div className="container-card-image">
-              <img className="image-slider-card" src={hourframe.image.url} alt={hourframe.title} />
-            </div>
-            <div className="container-card-text">
-              <Link className="links-text" to={`/AllDoctors/${hourframe._id}`}>
-                <p className="links-text">{hourframe.title}</p>
-              </Link>
-            </div>
+    <div>
+      {specielties.map((hourframe, index) => (
+        <Link className="Link-text" to={`/AllDoctors/${hourframe._id}`}>
+          <div className="border-buttom-h3">
+            <p>{hourframe.title}</p>
+
+            <img className="arrowgo" src={arrow} alt="" />
           </div>
-        ))}
-      </Slider>
+        </Link>
+      ))}
     </div>
   );
 };

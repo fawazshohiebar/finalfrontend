@@ -35,7 +35,7 @@ useEffect(() => {
 
 
 
-<div className='display-flex-row-marginnone'>
+<div className='doctor-page-alignment'>
 
 
 

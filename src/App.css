@@ -31,22 +31,25 @@
 .first-section {
   margin-top: 0px;
   background-color: #3281B1;
-  height: 15vw;
+  height: 19vw;
   padding-top: 11vw;
-  padding-left: 10vw;
-  padding-bottom: 3vw;
-  background-image: url("../src//images//back.jpg");
+padding-left: 10vw;
+  padding-bottom: 6vw;
+  /* background-image: url("https://images.template.net/wp-content/uploads/2015/05/15141503/Medical-Website.png"); */
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url("../src//images//back.jpg");
+margin-bottom: 2vw;
+
 }
 
 .search-word {
   margin-top: 0px;
-  color: white;
+  color: #3EB6DE;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
-  font-size: 48px;
+  font-size: 3vw;
 }
 
 
@@ -54,8 +57,10 @@
 
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 500;
-  font-size: 2.5vw;
+  font-weight: 600;
+  font-size: 2.8vw;
+  color: white;
+
 }
 
 .inner-first-section {
@@ -65,15 +70,78 @@
 
 
 .second-section {
-  height: 35vw;
-margin-top: 3vw;
-  margin-bottom: 5vw;
+  height: 45vw;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  padding-left: 5%;
+  gap: 1%;
+
 }
+.first-second
+{
+  width: 20%;
+}
+
+.second-second{
+  width: 30%;
+}
+.third-second
+{
+  width: 40%;
+}
+.second-card-wrap{
+
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+}
+.uderline-border-buttom{
+  
+  border-bottom: 1px solid grey;
+  width: 70%;
+  text-align: left;
+}
+
+
+
+.scrolling-button {
+  margin-top: 2vw;
+  font-size: 1.5vw;
+  height: 4vw;
+  border: 1px;
+  border-radius: 1.5vw;
+  color: white;
+  background: #3EB6DE;
+  margin-bottom: 3vw;
+  cursor: pointer;
+}
+
+.inside-second
+{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  
+
+}
+.left-image-second-second {
+  height: 35%;
+  width: 98%;
+  padding-top: 10%;
+}
+
+.rigth-third-image {
+  width: 90%;
+  height: 36%;
+  margin-left: 0%;
+  padding-bottom: 14%;
+}
+
+.parag-width{
+  width: 70%;
+}
+
 
 .second-inner {
   height: 30vw;
@@ -87,6 +155,44 @@ margin-top: 3vw;
   align-items: center;
 }
 
+.toprated-doctor{
+  height: auto;
+  width: 95%;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2vw;
+}
+
+.left-toprated{
+  width: 20%;
+}
+.right-toprated{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+
+
+.card-toprated{
+width: 30%;
+}
+
+.image-toprated {
+  height: 60%;
+  width: 80%;
+  padding-left: 5%;
+}
+
+
+
+.dr-eliana {
+  font-size: 1.5vw;
+  color: white
+}
 .container-image-semiheader {
   border: 1px solid black;
   width: 35%;
@@ -101,13 +207,6 @@ margin-top: 3vw;
   top: 0;
   left: 50%;
   transform: translate(-50%, -30%);
-}
-
-
-
-.dr-eliana {
-  font-size: 1.5vw;
-  color: white
 }
 
 
@@ -169,12 +268,16 @@ margin-top: 3vw;
 
 
 .footer-section{
-  height: 27vw;
+  height:15vw;
   background-color: #3281B1;
   display: flex;
   flex-direction: row;
 }
 
+.first-footer-paragraph{
+  font-size: 1.5vw;
+  color: white;
+}
 
 
 
@@ -304,6 +407,19 @@ flex-direction: column;
   
 }
 
+.display-flex-row-nowrap{
+  margin-top: 1vw;
+
+  display: flex;
+  flex-direction: row;
+ 
+  flex-wrap: nowrap;
+}
+.social{
+  width: 21%;
+  height: 10%;
+}
+
 
 .display-flex-column{
   display: flex;
@@ -319,17 +435,22 @@ flex-direction: column;
   flex-wrap: wrap;
 }
 
-
-
-
-
-.image-boxshadow-doctors-services{
-
-  width: 70%;
-  height: 100%;
-  box-shadow: 0px 0px 11px 0px #0b275a;
+.doctor-page-alignment{
+  display: flex;
+  flex-direction: row;
+ 
+  flex-wrap: wrap;
 }
 
+
+
+
+.image-boxshadow-doctors-services {
+  border-radius: 0.5vw;
+  width: 70%;
+  height: 100%;
+  box-shadow: 0px 0px 6px 0px #0b1934;
+}
 
 
 
@@ -370,7 +491,7 @@ flex-direction: column;
 
 .doctors-image-container{
   width: 50%;
-  height: 45vw;
+  height: 48vw;
   background-color: #EAEAFF;
   display: flex;
   flex-direction: row;
@@ -397,9 +518,15 @@ flex-direction: column;
 }
 
 
-.doctors-text-info{
+
+.doctors-text-info {
   font-size: 1.5vw;
   padding-left: 3vw;
+  /* width: 5vw; */
+  overflow: unset;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
 }
 
 
@@ -410,6 +537,7 @@ flex-direction: column;
     height: 3vw;
     width: 80%;
     border: none;
+    cursor: pointer;
    
     
     
@@ -456,6 +584,10 @@ html {
     align-items: center;
     display: flex;
     flex-direction: column-reverse;
+    background-image: url("../src//images//Login-back.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
 
 }
 
@@ -464,14 +596,14 @@ html {
   color:#3281B1 ;
 
 }
-.login-input{
-
+.login-input {
   height: 3vw;
+  font-size: 1.5vw;
 }
 .register-clicker{
   width: 35%;
   height: 4vw;
-  border-radius: 7px;
+  border-radius:1vw;
   background-color: #3281B1;
   font-size: 1.8vw;
   color: white;
@@ -584,11 +716,92 @@ color: #3281B1;
 }
 .registraion-inputs{
   height: 3vw;
+  font-size: 1.3vw;
 
 }
 .clickers-registration{
   padding-left: 22px;
 }
+
+
+
+
+
+
+
+
+/* servicesssssssssssssssss */
+
+
+
+
+.services{
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+  height: auto;
+  padding-bottom: 5vw;
+}
+.left-services {
+  width: 20%;
+}
+.right-services{
+  width: 60%;
+}
+#specielties{
+  padding-top: 5vw;
+}
+.border-buttom-h3{
+  border-bottom: 1px solid grey; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 5%;
+  padding-top: 2%;
+  cursor: pointer;
+  font-size: 1.3vw;
+}
+.arrowgo {
+  height: 2vw;
+  width: 4%;
+  opacity: 0.8;
+  margin-top: 3%;
+  
+}
+
+.Link-text{
+  color: black;
+  text-decoration: none;
+  
+}
+
+
+
+
+.footer-container{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  padding-left: 10%;
+}
+.first-footer-section{
+color:white;
+  width: 35%;
+}
+.second-footer-section{
+  color:white;
+  width: 35%;
+}
+.third-footer-section{
+  width: 30%;
+  color:white;
+}
+.toprated-parags
+{
+  font-size: 1.2vw;
+}
+
+
 
 
 
@@ -603,7 +816,7 @@ color: #3281B1;
   width: 60%;
   border: none;
  
-  
+  cursor: pointer;
  
   color: white;
   margin-left: 0.5vw;
@@ -660,25 +873,25 @@ color: #3281B1;
     color: white;
     font-size: 2.5vw;
     text-decoration: none;
+margin-top: 50%;
+padding-top: 20%;
+cursor: pointer;
   }
   .inner-header{
     gap: 1vw;
     width: 50%;
   }
-
-
-
-  .first-section {
-    margin-top: 0px;
-    background-color: #3281B1;
-    height: 35vw;
-    padding-top: 10vw;
-    padding-left: 3vw;
-    padding-bottom: 3vw;
-    background-image: url("../src//images//back.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  .anchorss-links{
+    cursor: pointer;
+    padding-top: 20%;
   }
+
+
+
+
+
+
+
 
   .search-word {
     margin-top: 0px;
@@ -705,9 +918,52 @@ color: #3281B1;
 
 
 
+  .footer-submit {
+    width: 14.5vw;
+    background: white;
+    font-size: 2.5vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-left: 25vw;
+  }
+  .footer-leftdiv {
+    width: 80%;
+     margin-left: 0%; 
+    padding-left: 3%;
+  }
+  
+  .footer-label {
+    color: white;
+    font-size: 2.5vw;
+  }
+  .foooter-text {
+    color: white;
+    font-size: 3.8vw;
+  }
+  
+  
+  #message {
+    width: 66%;
+    /* resize: vertical; */
+    height: 15vw;
+  }
+
+  .footer-section {
+    height: 42vw;
+    background-color: #3281B1;
+    display: flex;
+    flex-direction: row;
+}
 
 
-
+.footer-right-text {
+  color: white;
+  font-size: 2.3vw;
+  position: relative;
+  padding-top: 31%;
+  padding-left: 0%;
+  width: 30%;
+}
 
 
 
@@ -830,6 +1086,215 @@ color: #3281B1;
   left: 50%;
   transform: translate(-50%, -30%);
 }
+
+
+
+
+
+
+
+
+#message {
+  width: 79%;
+  /* resize: vertical; */
+  height: 15vw;
+}
+.footer-label {
+  color: white;
+  font-size: 3.5vw;
+}
+.footer-leftdiv {
+  width: 70%;
+  margin-left: 0%;
+  padding-left: 3%;
+}
+.footer-right-text {
+  color: white;
+  font-size: 2.3vw;
+  position: relative;
+  padding-top: 37%;
+  padding-left: 0%;
+  width: 30%;
+}
+.footer-submit {
+  width: 20.5vw;
+  background: white;
+  font-size: 4.5vw;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-left: 34vw;
+}
+.footer-section {
+  height: 50vw;
+  background-color: #3281B1;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+
+.doctor-page-alignment {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.doctors-image-container {
+  width: 100%;
+  height: 84vw;
+  background-color: #EAEAFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctors-picture {
+  height: 69%;
+  width: 64%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 11px 0px #0b275a;
+}
+.doctors-text-info {
+  font-size: 3.5vw;
+  padding-left: 5vw;
+}
+.datecom {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  height: 8vw;
+  padding-left: 5vw;
+  gap: 0.8vw;
+}
+.button-ordering {
+  border-radius: 15px;
+  background-color: #3281B1;
+  font-size: 3.3vw;
+  height: 7vw;
+  width: 39vw;
+  border: none;
+  color: white;
+  margin-left: 0vw;
+}
+.booking-button {
+  border-radius: 15px;
+  background-color: #3281B1;
+  font-size: 3.3vw;
+  height: 7.5vw;
+  width: 100%;
+  border: none;
+  color: white;
+  margin-left: 0px;
+}
+
+
+
+
+/* login and registration forms  */
+
+
+
+.container-login-registration {
+  height: 173vw;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 10%;
+  width: 100%;
+  background-color: #3281B1;
+}
+.flip-card {
+  background-color: white;
+  width: 80%;
+  height: 106vw;
+  perspective: 1000px;
+}
+.Login-header {
+  text-align: center;
+  font-size: 7vw;
+  color: #3281B1;
+}
+.login-label {
+  font-size: 6vw;
+  color: #3281B1;
+}
+.login-input {
+  height: 8vw;
+}
+.inputs-login {
+  text-align: left;
+  width: 80%;
+  line-height: 12vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4vw;
+  padding-left: 4vw;
+}
+.register-clicker {
+  width: 44%;
+  height: 8vw;
+  border-radius: 3vw;
+  background-color: #3281B1;
+  font-size: 4.8vw;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.inner-registration-inputs {
+  text-align: left;
+  width: 70%;
+  line-height: 8vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0vw;
+  padding-left: 6vw;
+  padding-bottom: 2%;
+}
+
+.inner-registration {
+  text-align: center;
+  font-size: 6vw;
+  color: #3281B1;
+}
+.registration-label {
+  font-size: 5vw;
+  color: #3281B1;
+}
+.registraion-inputs {
+  height: 5vw;
+}
+.clickers-registration {
+  padding-left: 5vw;
+  width: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
