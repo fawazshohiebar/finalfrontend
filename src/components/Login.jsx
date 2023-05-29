@@ -35,6 +35,9 @@ function Login() {
       else if(response.data.role=="Doctor"){
         navigate(`/DoctorDash`)
       }
+      else if(response.data.role=="user"){
+        navigate(`/`)
+      }
 
 
 

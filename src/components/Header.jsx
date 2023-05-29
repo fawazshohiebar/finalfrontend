@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
+import logo from "../images/logo.png"
 
 
 
@@ -52,7 +53,7 @@ function  Header() {
   return (
     <div className='header'>
 
-    <div><h1 className='header-color'>LOGO</h1></div>
+    <div><h1 className='header-color'>Find a Doc</h1></div>
     <div className='inner-header'>
       
      { <Link   className='inner-header-link' to="/"><p>Home</p>

@@ -3,10 +3,38 @@ import "./DoctorDash.css"
 import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 function DoctorDashboard() {
+  const navigate = useNavigate();
 
 const[patientsinfo,setpatientsinfo]=useState(null)
 const userID = sessionStorage.getItem('userID');
+
+function checkUserRole() {
+  const userRole = sessionStorage.getItem('role');
+
+
+
+  // Get the user's role from session storage
+  if ( userRole !== 'Doctor'||!userRole) {
+    // User has the 'user' role, so navigate to the desired page
+
+    navigate("/", { replace: true });
+  }
+}
+
+
+
+useEffect(() => {
+  checkUserRole()
+  }, []);
+
+
+
+
+
+
 // getting the userid from the session 
 
 const [docID,setdocID]=useState(null)
@@ -14,7 +42,6 @@ const [docID,setdocID]=useState(null)
 const getdoctorid =async()=>{
   const response=await axios.get(`http://localhost:4000/doctor/doctoruser/${userID}`)
   setdocID(response.data[0]._id)
-
   const fetchappointments =async(id)=>{
     const response=await axios.get(`http://localhost:4000/booking/doctorbooking/${id}`)
     setpatientsinfo(response.data)
@@ -31,9 +58,11 @@ const getdoctorid =async()=>{
 
 
 
+
 const deleteappointment=async(id)=>{
   const response=await axios.delete(`http://localhost:4000/booking/${id}`)
   console.log(response.data)
+  window.location.reload()
 }
 
 
@@ -42,8 +71,8 @@ const deleteappointment=async(id)=>{
 
 
 useEffect(() => {    
-  getdoctorid()
- },[patientsinfo]);
+  getdoctorid();
+ },[]);
 
   return (
 

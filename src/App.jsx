@@ -23,6 +23,7 @@ import Dashboard from './pages/Dashboard';
 import AddDoctors from './components/AddDoctors';
 import Login from './components/Login';
 import DoctorDashboard from './pages/DoctorDashboard';
+import SpecieltiesDashboard from './components/SpecieltiesDashboard';
 function App() {
 
 
@@ -42,7 +43,7 @@ function App() {
 <BrowserRouter>
     <Routes>
     <Route path='/' element={<Homefull />} />
-    <Route path='Specielties' element={<Specielties />} />
+    <Route path='/Specielties' element={<Specielties />} />
         <Route path='/AllDoctors/:id' element={<AllDoctors />} />
         <Route path='/DoctorPage/:id' element={<DoctorPage />} />
 
@@ -51,6 +52,8 @@ function App() {
  <Route path='/Login' element={<Login />} />
  <Route path='/DoctorDash' element={<DoctorDashboard />} />
 
+<Route path='/Specieltiesdash' element={<SpecieltiesDashboard />} />
+ 
     </Routes>
     </BrowserRouter>
 

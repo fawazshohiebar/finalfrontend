@@ -113,7 +113,7 @@ function Homepage () {
 
 <label className='footer-label'>Message</label> <br />
 
-<textarea id="message" name="message" rows="10" cols="60" ></textarea>
+<textarea id="message" name="message" rows="10" cols="60"></textarea>
 <br />
 <button className='footer-submit'>Submit</button>
 </div>

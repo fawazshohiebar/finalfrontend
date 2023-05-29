@@ -1,3 +1,5 @@
+
+
 import "../pages/dashboard.css"
 
 import trashcan from "../images/trashcan.png"
@@ -8,8 +10,14 @@ import Collapsible from 'react-collapsible';
 import axios from "axios"
 import { useEffect } from "react"
 import SuperadminDash from "../components/SuperadminDash";
+function SpecieltiesDashboard() {
 
-function Dashboard() {
+
+
+
+
+
+
 
 const [editname,seteditname]=useState(null)
 const [edityearsofexp,setedityearsofexp]=useState(null)
@@ -21,7 +29,7 @@ const [titlecat,settitlecat]=useState()
 
     const [Specielties, setSpecielties] = useState();
     const getSpecielties = async () => {
-      const response = await axios.get(`http://localhost:4000/subcategory/categoryid/64648d6f857265df115fc6cc`);
+      const response = await axios.get(`http://localhost:4000/subcategory/categoryid/64648d8a857265df115fc6ce`);
       console.log(response.data);
       setSpecielties(response.data);
     };
@@ -37,7 +45,7 @@ const [titlecat,settitlecat]=useState()
 
     const uploadcategory = async () => {
         const formData = new FormData();
-        formData.append('Category_ID', '64648d6f857265df115fc6cc');
+        formData.append('Category_ID', '64648d8a857265df115fc6ce');
         formData.append('image', catimage); // Assuming you have an image file object
         formData.append('title', titlecat);
       
@@ -172,7 +180,7 @@ console.log(response.data)
             <div className='headers'>
                 <div className='parent-headder'>
                     <div className='summer-border'>
-                        <p className='summer-parag'> Medical  Services</p>
+                        <p className='summer-parag'> Specielties</p>
                     </div>
 
                 </div>
@@ -307,8 +315,24 @@ console.log(response.data)
 
 
 
-        </div>
-    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  )
 }
 
-export default Dashboard;
+export default SpecieltiesDashboard
