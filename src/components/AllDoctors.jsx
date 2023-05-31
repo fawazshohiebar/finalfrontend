@@ -1,11 +1,11 @@
 import React from 'react'
-import {Header, MenuBar} from '../components/Header'
 
 import { useParams } from 'react-router-dom';
 import axios from "axios"
 import { useState, useEffect } from "react";
 import semiheader from "../images/semiheader.jpeg"
 import { Link } from 'react-router-dom';
+import Head from './Head';
 
 import "./Alldoc.css"
 
@@ -15,7 +15,6 @@ export default function AllDoctors() {
 
 
   const { id } = useParams();
-  console.log(id)
 
   const [empty,setempty]=useState(true)
 
@@ -23,12 +22,11 @@ const [alldoctors,setalldoctors]=useState()
 
 const getalldoctors = async () => {
   const response = await axios.get(`https://finddoc.onrender.com/doctor/bysubcategory/${id}`);
-  console.log(response.data);
+
 
   if (response.data.length === 0) {
     // Array is empty
     // Handle the case when there are no doctors
-    console.log('No doctors found.');
     setempty(true)
     
     // You can display a message or handle the empty array case in any way you prefer
@@ -50,8 +48,7 @@ const getalldoctors = async () => {
 
     
 
-    <Header setMenuBar={setMenuBar} menubar={menubar}/>
-      <MenuBar menubar={menubar}/>
+   <Head/>
 
 
 {empty ? (
@@ -82,7 +79,7 @@ const getalldoctors = async () => {
 
 {alldoctors &&
           alldoctors.map((hourframe, index) => (
-            <Link className='container-specielties'  to={`/DoctorPage/${hourframe._id}`}>
+            <Link key={hourframe._id} className='container-specielties'  to={`/DoctorPage/${hourframe._id}`}>
 
 
 

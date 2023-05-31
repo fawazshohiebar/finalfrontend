@@ -1,6 +1,6 @@
 import React from 'react'
-import {Header, MenuBar} from '../components/Header'
 import semiheader from "../images/semiheader.jpeg"
+import Head from './Head'
 import "./DoctorPage.css"
 
 
@@ -13,14 +13,12 @@ export default function DoctorPage() {
   const [menubar, setMenuBar]= useState(false);
 
   const { id } = useParams();
-  console.log(id)
 
   const[doctorInfo,setdoctorInfo]=useState()
 
 const getInfoOfDoctor=async()=>{
   const response=await axios.get(`https://finddoc.onrender.com/doctor/doctor/${id}`)
 setdoctorInfo(response.data[0])
-console.log(response.data[0])
 }
 
 useEffect(() => {
@@ -32,8 +30,7 @@ useEffect(() => {
   return (
     <div>
         
- <Header setMenuBar={setMenuBar} menubar={menubar}/>
-      <MenuBar menubar={menubar}/>
+<Head/>
 
 
 <div className='drpage-con'>

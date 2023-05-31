@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom';
 
 function DateTimeComponent() {
   const { id } = useParams();
-  console.log(id);
   const [selectedDate, setSelectedDate] = useState();
   const [selectedDatee,setselectedDatee]=useState()
   const userID = sessionStorage.getItem('userID');
@@ -19,7 +18,6 @@ function DateTimeComponent() {
       setSelectedDate(date.toLocaleString());
       setselectedDatee(date)
 
-      console.log(date.toLocaleString());
     }
   };
   
@@ -39,10 +37,8 @@ function DateTimeComponent() {
       });
 
       toast.success('Appointment booked successfully!', { position: toast.POSITION.TOP_RIGHT });
-      console.log(response.data);
     } catch (error) {
       toast.error(error.response.data.message);
-      console.error(error.response.data);
     }
   }
   };

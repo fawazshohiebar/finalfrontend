@@ -13,7 +13,6 @@ export const CarouselMediacal = () => {
 
   const getSpecielties = async () => {
     const response = await axios.get("https://finddoc.onrender.com/subcategory/categoryid/64648d6f857265df115fc6cc");
-    console.log(response.data);
     setSpecielties(response.data);
   };
 
@@ -24,7 +23,7 @@ export const CarouselMediacal = () => {
   return (
     <div>
       {specielties.map((hourframe, index) => (
-        <Link className="Link-text" to={`/AllDoctors/${hourframe._id}`}>
+        <Link key={hourframe._id} className="Link-text" to={`/AllDoctors/${hourframe._id}`}>
           <div className="border-buttom-h3">
             <p>{hourframe.title}</p>
             <img className="arrowgo" src={arrow} alt="" />

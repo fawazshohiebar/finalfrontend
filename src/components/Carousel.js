@@ -13,7 +13,6 @@ export const Carousel = () => {
 
   const getSpecielties = async () => {
     const response = await axios.get(`https://finddoc.onrender.com/subcategory/categoryid/64648d8a857265df115fc6ce`);
-    console.log(response.data);
     setSpecielties(response.data);
   };
 
@@ -73,7 +72,7 @@ export const Carousel = () => {
   return (
     <div>
       {specielties.map((hourframe, index) => (
-        <Link className="Link-text" to={`/AllDoctors/${hourframe._id}`}>
+        <Link key={hourframe._id} className="Link-text" to={`/AllDoctors/${hourframe._id}`}>
           <div className="border-buttom-h3">
             <p>{hourframe.title}</p>
 

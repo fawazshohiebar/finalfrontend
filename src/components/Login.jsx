@@ -4,8 +4,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import {Header, MenuBar} from '../components/Header'
-
+import Head from './Head';
 function Login() {
   const [menubar, setMenuBar]= useState(false);
 
@@ -66,8 +65,8 @@ const Register=async()=>{
 
   return (
     <div>
- <Header setMenuBar={setMenuBar} menubar={menubar}/>
-      <MenuBar menubar={menubar}/>   
+      <Head/>
+  
        <div className='container-login-registration'>
      
       <ToastContainer />
