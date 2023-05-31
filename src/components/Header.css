@@ -180,9 +180,7 @@
 
 
   @media (max-width: 1023px) {
-    .navnavbar-button {
-      font-size: 18px;
-    }
+ 
     .navcontact-button {
       font-size: 14px;
     }
@@ -222,7 +220,7 @@
 
 
 
-@media screen and (max-width: 1880px) and (min-width: 601px) {
+@media screen and (max-width: 1880px) and (min-width: 680px) {
 
   .log {
     width: 30%;
@@ -269,3 +267,31 @@
 }
 
 
+
+
+
+
+
+
+@media screen and (max-width: 679px) {
+
+
+  .navnavbar-list {
+    width: 75%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100%;
+    gap: 1vw;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    justify-content: space-around;
+}
+
+  .navnavbar {
+    padding-top: 1%;
+    display: flex;
+    align-items: center;
+    height: 3vw;
+}
+}
