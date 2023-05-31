@@ -4,9 +4,11 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
+import {Header, MenuBar} from '../components/Header'
 
 function Login() {
+  const [menubar, setMenuBar]= useState(false);
+
   const flipCard = () => {
     var flipCard = document.querySelector('.flip-card');
     flipCard.classList.toggle('flipped');
@@ -64,8 +66,9 @@ const Register=async()=>{
 
   return (
     <div>
-      <Header/>
-    <div className='container-login-registration'>
+ <Header setMenuBar={setMenuBar} menubar={menubar}/>
+      <MenuBar menubar={menubar}/>   
+       <div className='container-login-registration'>
      
       <ToastContainer />
       <div className='flip-card'>

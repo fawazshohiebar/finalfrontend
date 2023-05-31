@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header'
+import {Header, MenuBar} from '../components/Header'
 
 import { useParams } from 'react-router-dom';
 import axios from "axios"
@@ -7,7 +7,11 @@ import { useState, useEffect } from "react";
 import semiheader from "../images/semiheader.jpeg"
 import { Link } from 'react-router-dom';
 
+import "./Alldoc.css"
+
 export default function AllDoctors() {
+  const [menubar, setMenuBar]= useState(false);
+
 
 
   const { id } = useParams();
@@ -46,8 +50,8 @@ const getalldoctors = async () => {
 
     
 
-<Header/>
-
+    <Header setMenuBar={setMenuBar} menubar={menubar}/>
+      <MenuBar menubar={menubar}/>
 
 
 {empty ? (
@@ -78,30 +82,42 @@ const getalldoctors = async () => {
 
 {alldoctors &&
           alldoctors.map((hourframe, index) => (
-
-<div className='container-specielties'>
-
-
-<div className='container-image-doctors'>
+            <Link className='container-specielties'  to={`/DoctorPage/${hourframe._id}`}>
 
 
-    <img className='image-boxshadow-doctors-services' src={hourframe.image.url} alt="" />
+
+
+
+
+
+
+
+
+
+
+<div className='contain-image-doc'>
+<img className='image-doctorsss' src={hourframe.image.url} alt="" />
 </div>
-<br />
 
-<Link className='text-docaration'  to={`/DoctorPage/${hourframe._id}`}>
 
-<div className='buttun-center'>
-<div className="container-card-doctors-text">
+<div className='doctors-texts'>
 
-  
-            <p>Location:{hourframe.location}</p>
-            <p>Years of experience:{hourframe.yearsofexp} years</p>
-          </div>
-          </div>
-          </Link>
+<p className='header-name'>{hourframe.User_ID.name}</p>
+<label className='label-text'> Years Of experience </label>
+<p className='parag-info'>{hourframe.yearsofexp} Years</p>
+<label className='label-text'> Location </label>
+<p className='parag-info'>{hourframe.location}</p>
+
 
 </div>
+
+
+
+
+
+
+
+</Link>
     ))}
     
 

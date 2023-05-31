@@ -1,0 +1,171 @@
+.container-specielties{
+    height: 21vw;
+    width: 20%;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+
+  border-radius: 10px;
+    padding: 10px;
+    box-shadow: 10px 10px 20px   #888888;
+
+
+}
+.container-alldoctors {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    flex-wrap: wrap;
+    padding-bottom: 5vw;
+    gap: 2vw;
+    width: 90%;
+    background-color: #F6F7FF;
+}
+.image-doctorsss {
+    border: 1px solid grey;
+    border-radius: 50%;
+    height: 100%;
+    width: 40%;
+}
+.contain-image-doc {
+    height: 30%;
+    width: 80%;
+    padding-left: 8%;
+    padding-top: 4%;
+}
+.doctors-texts{
+    display: flex;
+    flex-direction: column;
+    padding-left: 9%;
+    line-height: 1.3vw;
+ }
+ .label-text{
+    color: grey;
+ }
+ .header-name{
+    font-size: 1.5vw;
+ }
+ .parag-info{
+    font-size: 1vw;
+ }
+
+
+
+
+
+ @media screen and (max-width: 1080px) {
+ 
+
+    .container-alldoctors {
+        padding-left: 5%;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        flex-wrap: wrap;
+        padding-bottom: 5vw;
+        gap: 2vw;
+        width: 95%;
+        background-color: #F6F7FF;
+    }
+
+
+
+    .container-specielties {
+        height: 50vw;
+        width: 45%;
+        background-color: white;
+        text-decoration: none;
+        color: black;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 10px 10px 20px #888888;
+    }
+
+    .parag-info {
+        font-size: 2.5vw;
+    }
+    .label-text {
+        font-size: 3.3vw;
+        color: grey;
+    }
+    .header-name {
+        font-size: 3.5vw;
+    }
+
+    .doctors-texts {
+        display: flex;
+        flex-direction: column;
+        padding-left: 9%;
+        line-height: 3.3vw;
+    }
+
+    .title-specielties-container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-color: #F6F7FF;
+        padding-bottom: 6vw;
+    }
+
+
+
+    .border-under-title {
+        width: 100%;
+        height: 6vw;
+    }
+    .title-specielties {
+        color: #3281B1;
+        font-size: 3.5vw;
+        text-align: center;
+    }
+
+}
+
+
+ @media screen and (max-width: 600px) {
+
+
+    .container-alldoctors {
+        padding-left: 10%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        flex-wrap: wrap;
+        padding-bottom: 5vw;
+        gap: 6vw;
+        width: 90%;
+        background-color: #F6F7FF;
+        height: auto;
+    }
+
+
+
+    .container-specielties {
+        height: 67vw;
+        width: 85%;
+        background-color: white;
+        text-decoration: none;
+        color: black;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 10px 10px 20px #888888;
+    }
+
+
+    .parag-info {
+        font-size: 4vw;
+    }
+    .header-name {
+        font-size: 5.5vw;
+    }
+    .doctors-texts {
+        display: flex;
+        flex-direction: column;
+        padding-left: 9%;
+        line-height: 3.3vw;
+    }
+
+
+
+ }

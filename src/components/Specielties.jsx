@@ -1,12 +1,14 @@
-import React from 'react'
-import Header from './Header'
+import React, { useState } from 'react'
+import {Header, MenuBar} from '../components/Header'
 import semiheader from "../images/semiheader.jpeg"
 
 function Specielties ()  {
+  const [menubar, setMenuBar]= useState(false);
+
   return (
     <div>
-<Header/>
-
+<Header setMenuBar={setMenuBar} menubar={menubar}/>
+      <MenuBar menubar={menubar}/>
 <div className='title-specielties-container'>
 
 <div className='border-under-title'>

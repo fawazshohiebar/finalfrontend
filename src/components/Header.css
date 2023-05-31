@@ -1,0 +1,271 @@
+
+.display-flex-row-menu{
+    display: flex;
+    flex-direction: row;
+}
+.navmenu-menu-logo {
+    text-align: left;
+    width: 40%;
+    background: none;
+    border: none;
+    
+    font-size: 6vw;
+  
+}
+.text-decoration-none{
+    text-decoration: none;
+    color: white;
+}
+.right-menu{
+    width: 50%;
+}
+.navbiggerthing {
+    /* background-color: #fbece4; */
+    height: 5vw;
+    width: 100%;
+   
+  
+  
+  }
+
+.navnavbar-bu{
+  background: none;
+  border: none;
+}
+
+  .navnavbar-menu {
+    display: none;
+    /* justify-content: space-between; */
+    width: 100%;
+    justify-content: end;
+}
+  .navnavbar {
+    padding-top: 1%;
+    display: flex;
+    align-items: center;
+  }
+  .navnavbar-list {
+    width: 60%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 100px;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    justify-content: space-around;
+}
+  .navnavbar-logo {
+    width: 120px;
+    margin-left: 150px;
+  }
+  .navnavbar-contact {
+    width: 200px;
+    margin-right: 100px;
+  }
+  .log{
+    width: 30%;
+    text-decoration: none;
+
+    background-color: transparent;
+    border: none;
+    padding: 0px 24px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.8vw;
+    font-family: sans-serif;
+    cursor: pointer;
+
+  }
+  
+  .navnavbar-button {
+    background-color: transparent;
+    border: none;
+    padding: 0px 24px;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+  .navnavbar-button a {
+    text-decoration: none;
+    color: white;
+    line-height: 32px;
+    font-weight: 300;
+  }
+  .navlinks{
+    text-decoration: none;
+    color: black;
+  }
+  .navcontact-button {
+    background-color: transparent;
+    border: none;
+    padding: 0px 24px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+  .navcontact-button a {
+    color: black;
+  }
+  .navcontact-button a:hover {
+    color: #6d71ff;
+  }
+  .navLogin-button {
+    background-color: transparent;
+    border: transparent;
+    font-family: sans-serif;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .navhidden_show {
+    display: flex;
+    width: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2196f3;
+    position: absolute;
+    width: 100%;
+    z-index: 60;
+}
+  .navhidden_hidden {
+    display: none;
+  }
+  .navmenu-menu {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    color: #000;
+    font-size: 18px;
+    font-family: sans-serif;
+    width: 50%;
+
+  }
+  .navmenu-menu a {
+    text-decoration: none;
+    color: white;
+  }
+  .navmenu-menu:hover {
+    background-color: #6d71ff;
+    transition: all 0.3s ease-in-out;
+  }
+  .navbar-user {
+    display: flex;
+    gap: 5px;
+  }
+  .navmenu-button {
+    max-width: 40px;
+    max-height: 40px;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0px !important;
+    cursor: pointer;
+  }
+  .navmenu {
+   
+    max-width: 100%;
+    max-height: 40px;
+  }
+
+  @media all and (max-width:1280px){
+    .navnavbar-menu{
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 1023px) {
+    .navnavbar-button {
+      font-size: 18px;
+    }
+    .navcontact-button {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .navnavbar-menu {
+      display: block;
+      display: flex;
+      flex-direction: row;
+  }
+  
+    .navhidden_show {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navnavbar-logo {
+      margin-left: 40px;
+    }
+    .navnavbar-button{
+      display: none;
+    }
+
+  }
+  
+  @media screen and (max-width: 600px) {
+
+
+    .log {
+      width: 125vw;
+      background-color: transparent;
+      font-size: 4.3vw;
+  }}
+
+
+
+
+
+@media screen and (max-width: 1880px) and (min-width: 601px) {
+
+  .log {
+    width: 30%;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    padding: 0px 24px;
+    text-decoration: none;
+    color: white;
+    font-size: 2.8vw;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+  .navnavbar {
+    padding-top: 1%;
+    display: flex;
+    align-items: center;
+    height: 3vw;
+}
+
+.navnavbar-list {
+  width: 70%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 1vw;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  justify-content: space-around;
+}
+
+.header-color {
+
+  color: white;
+  text-decoration: none;
+  font-size: 2vw;
+}
+
+
+
+
+
+}
+
+

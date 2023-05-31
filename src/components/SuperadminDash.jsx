@@ -58,7 +58,7 @@ function SuperadminDash() {
   checkUserRole()
 };
 
-setTimeout(clearSession, 60000); // 30 minutes
+setTimeout(clearSession, 1800000); // 30 minutes
 
 
 

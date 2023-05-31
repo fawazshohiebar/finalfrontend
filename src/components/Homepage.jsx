@@ -7,12 +7,13 @@ import semiheader from "../images/semiheader.jpeg"
 import rightimage from "../images/rightimage.png"
 
 import firstdr from "../images/firstdr.jpeg"
-import secondr from "../images/seconddr.jpeg"
+import secondr from "../images/second.jpeg"
 import thirddr from "../images/thirddr.jpeg"
 import fourthdr from "../images/fourthdr.jpeg"
 import fifthdr from "../images/fifthdr.jpeg"
-import leftimage from "../images/leftimage.png"
+import leftimage from "../images/leftimgs.jpg"
 import Footer from "../components/Footer"
+
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -40,7 +41,7 @@ const ScrollTo=()=>{
           <h1 className='search-word'>Search</h1>
 
 
-          <p className='header-color under-Search '>
+          <p className=' under-Search '>
             through our expertise to find your   <span className='search-word'> need</span></p>
           <p className='search-word'>  </p>
 
@@ -61,6 +62,9 @@ const ScrollTo=()=>{
       <div className='second-section'>
 
 <div className='first-second' ><h1>About Us</h1></div>
+
+
+
 <div className='second-second'>
 
 <h1>Find A Doc </h1>
@@ -130,18 +134,18 @@ const ScrollTo=()=>{
 
 <div className='left-services'> <h1>Services</h1></div>
 <div className='right-services'>
-<div id='medicalservices' ><h1>Medical services</h1>
+<div  ><h1 id='medicalservices'>Medical services</h1>
 
 
+<CarouselMediacal/>
 
-<Carousel/>
 
 
 
 <h1 id='specielties'>Specielties</h1>
 
-<CarouselMediacal/>
 
+<Carousel/>
 
 
 </div>

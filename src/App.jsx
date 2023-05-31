@@ -43,16 +43,27 @@ function App() {
 <BrowserRouter>
     <Routes>
     <Route path='/' element={<Homefull />} />
-    <Route path='/Specielties' element={<Specielties />} />
         <Route path='/AllDoctors/:id' element={<AllDoctors />} />
         <Route path='/DoctorPage/:id' element={<DoctorPage />} />
 
+        <Route path='/Login' element={<Login />} />
+
+
         <Route path='/Dashboard' element={<Dashboard />} />
  <Route path='/AddDoctors' element={<AddDoctors />} />
- <Route path='/Login' element={<Login />} />
- <Route path='/DoctorDash' element={<DoctorDashboard />} />
 
 <Route path='/Specieltiesdash' element={<SpecieltiesDashboard />} />
+
+
+
+
+<Route path='/DoctorDash' element={<DoctorDashboard />} />
+
+
+
+
+
+
  
     </Routes>
     </BrowserRouter>

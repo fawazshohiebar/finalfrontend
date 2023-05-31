@@ -1,6 +1,7 @@
 import React from 'react'
-import Header from './Header'
+import {Header, MenuBar} from '../components/Header'
 import semiheader from "../images/semiheader.jpeg"
+import "./DoctorPage.css"
 
 
 import { useParams } from 'react-router-dom';
@@ -9,7 +10,7 @@ import { useState, useEffect } from "react";
 import DateTimeComponent from "../components/DateTimeComponent"
 
 export default function DoctorPage() {
-
+  const [menubar, setMenuBar]= useState(false);
 
   const { id } = useParams();
   console.log(id)
@@ -31,10 +32,11 @@ useEffect(() => {
   return (
     <div>
         
-<Header/>
+ <Header setMenuBar={setMenuBar} menubar={menubar}/>
+      <MenuBar menubar={menubar}/>
 
 
-
+<div className='drpage-con'>
 <div className='doctor-page-alignment'>
 
 
@@ -64,11 +66,17 @@ useEffect(() => {
 
 
 <div className='second-div-doctor'>
-<p className='doctors-text-info'  >Name: {doctorInfo&&doctorInfo.User_ID.name}</p>
-<p className='doctors-text-info'>Location: {doctorInfo&&doctorInfo.location}</p>
-<p className='doctors-text-info'>Years Of Experience :{doctorInfo&&doctorInfo.yearsofexp} Years</p>
-<p className='doctors-text-info'>Description: {doctorInfo&&doctorInfo.description}</p>
+  <label className='label-docspage' >Name</label>
+<p className='doctors-text-info'  > Dr. {doctorInfo&&doctorInfo.User_ID.name}</p>
+<label  className='label-docspage'>Location</label>
+<p className='doctors-text-info'> {doctorInfo&&doctorInfo.location}</p>
+<label className='label-docspage'> Years Of Experience </label>
+<p className='doctors-text-info'>{doctorInfo&&doctorInfo.yearsofexp} Years</p>
 
+{/* <div className='paragraph-doctor-overflow'> */}
+<label  className='label-docspage'>Description</label>
+<p className='doctors-text-info' > {doctorInfo&&doctorInfo.description}</p>
+{/* </div> */}
 
 
 
@@ -100,6 +108,7 @@ useEffect(() => {
 
 </div>
 
+</div>
 
 
 
