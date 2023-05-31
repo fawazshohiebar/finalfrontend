@@ -102,7 +102,7 @@ justify-content: space-around;
     width: 100%;
     padding-left: 0px;
     margin-top: 10vw;
-
+z-index: 90;
     list-style: none;
     opacity: 0;
     font-size: 1.5rem;

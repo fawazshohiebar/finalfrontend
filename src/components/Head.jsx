@@ -55,7 +55,7 @@ function Head() {
     <div className='header-conn'>
         {!isMobile ? (<>
 
-<Link className='FindDoc'  style={{ cursor: 'pointer' }}> Find A Doc</Link>
+<Link className='FindDoc'  to="/" style={{ cursor: 'pointer' }}> Find A Doc</Link>
 
 <div className='list-navv'>
     <Link className='normall-linkss' to="/">Home</Link>
@@ -98,7 +98,7 @@ function Head() {
 </label>
 
 <ul class="menu-items">
-    <li><a  >Home</a></li>
+    <li><a href='/' >Home</a></li>
     <li><a onClick={()=>getPath("medicalservices")} >Medical Services</a></li>
     <li><a  onClick={()=>getPath("specielties")} >Specielties</a></li>
 
