@@ -32,7 +32,7 @@ function DateTimeComponent() {
     }
     else{
     try {
-      const response = await axios.post('http://localhost:4000/booking', {
+      const response = await axios.post('https://finddoc.onrender.com//booking', {
         date: selectedDate,
         User_ID: user,
         Doctor_ID: id,

@@ -21,7 +21,7 @@ const [titlecat,settitlecat]=useState()
 
     const [Specielties, setSpecielties] = useState();
     const getSpecielties = async () => {
-      const response = await axios.get(`http://localhost:4000/subcategory/categoryid/64648d6f857265df115fc6cc`);
+      const response = await axios.get(`https://finddoc.onrender.com/subcategory/categoryid/64648d6f857265df115fc6cc`);
       console.log(response.data);
       setSpecielties(response.data);
     };
@@ -42,7 +42,7 @@ const [titlecat,settitlecat]=useState()
         formData.append('title', titlecat);
       
         try {
-          const response = await axios.post('http://localhost:4000/subcategory', formData, {
+          const response = await axios.post('https://finddoc.onrender.com/subcategory', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
@@ -76,7 +76,7 @@ const [titlecat,settitlecat]=useState()
 const[doctoorinfo,setdoctorinfo]=useState()
 
 const getdoctorinfo=async(id)=>{
-    const response=await axios.get(`http://localhost:4000/doctor/doctor/${id}`)
+    const response=await axios.get(`https://finddoc.onrender.com/doctor/doctor/${id}`)
 console.log("halaaaa",response.data)
 setdoctorinfo(response.data)
 }
@@ -97,7 +97,7 @@ setdoctorinfo(response.data)
 
 const editdoctorinfo=async()=>{
     const data={location:editlocation,yearsofexp:edityearsofexp,description:editdescription}
-    const response=await axios.put(`http://localhost:4000/doctor/edit/${editdoctorid}`,data)
+    const response=await axios.put(`https://finddoc.onrender.com/doctor/edit/${editdoctorid}`,data)
     console.log("the doctor info editied successfully")
 
 }
@@ -107,7 +107,7 @@ const editdoctorinfo=async()=>{
     const [alldoctors,setalldoctors]=useState()
 
     const getalldoctors=async(id)=>{
-      const response =await  axios.get(`http://localhost:4000/doctor/bysubcategory/${id}`)
+      const response =await  axios.get(`https://finddoc.onrender.com/doctor/bysubcategory/${id}`)
       console.log(response.data)
       setalldoctors(response.data)
     }
@@ -116,7 +116,7 @@ const editdoctorinfo=async()=>{
 
 
     const deletedoctor=async(id)=>{
-const response=await axios.delete(`http://localhost:4000/doctor/delete/${id}`)
+const response=await axios.delete(`https://finddoc.onrender.com/doctor/delete/${id}`)
 console.log(response.data)
     }
     

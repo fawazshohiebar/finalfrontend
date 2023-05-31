@@ -25,13 +25,13 @@ function AddDoctors() {
   };
 
   const getSpecielties = async () => {
-    const response = await axios.get('http://localhost:4000/subcategory/categoryid/64648d6f857265df115fc6cc');
+    const response = await axios.get('https://finddoc.onrender.com/subcategory/categoryid/64648d6f857265df115fc6cc');
     console.log(response.data);
     setSpecielties(response.data);
   };
 
   const getMedicalServices = async () => {
-    const response = await axios.get('http://localhost:4000/subcategory/categoryid/64648d8a857265df115fc6ce');
+    const response = await axios.get('https://finddoc.onrender.com/subcategory/categoryid/64648d8a857265df115fc6ce');
     console.log(response.data);
     setSpecielties(response.data);
   };
@@ -45,7 +45,7 @@ function AddDoctors() {
       phone: phone,
       role: role,
     };
-    const response = await axios.post('http://localhost:4000/users/', data);
+    const response = await axios.post('https://finddoc.onrender.com/users/', data);
     console.log('new user is in ', response.data._id);
     setUserId(response.data._id);
     console.log('res ', response);
@@ -60,7 +60,7 @@ function AddDoctors() {
       data_doctor.append('yearsofexp', yearsOfExp);
       data_doctor.append('image', file);
 
-      const response_doctor = await axios.post('http://localhost:4000/doctor/', data_doctor);
+      const response_doctor = await axios.post('https://finddoc.onrender.com/doctor/', data_doctor);
       console.log('doctor response ', response_doctor);
       console.log('new doctor is in');
     } else {

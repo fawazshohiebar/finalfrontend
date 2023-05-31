@@ -18,7 +18,7 @@ export default function DoctorPage() {
   const[doctorInfo,setdoctorInfo]=useState()
 
 const getInfoOfDoctor=async()=>{
-  const response=await axios.get(`http://localhost:4000/doctor/doctor/${id}`)
+  const response=await axios.get(`https://finddoc.onrender.com/doctor/doctor/${id}`)
 setdoctorInfo(response.data[0])
 console.log(response.data[0])
 }

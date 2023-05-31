@@ -12,7 +12,7 @@ export const CarouselMediacal = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
 
   const getSpecielties = async () => {
-    const response = await axios.get("http://localhost:4000/subcategory/categoryid/64648d6f857265df115fc6cc");
+    const response = await axios.get("https://finddoc.onrender.com/subcategory/categoryid/64648d6f857265df115fc6cc");
     console.log(response.data);
     setSpecielties(response.data);
   };

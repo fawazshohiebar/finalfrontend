@@ -40,10 +40,10 @@ useEffect(() => {
 const [docID,setdocID]=useState(null)
 
 const getdoctorid =async()=>{
-  const response=await axios.get(`http://localhost:4000/doctor/doctoruser/${userID}`)
+  const response=await axios.get(`https://finddoc.onrender.com/doctor/doctoruser/${userID}`)
   setdocID(response.data[0]._id)
   const fetchappointments =async(id)=>{
-    const response=await axios.get(`http://localhost:4000/booking/doctorbooking/${id}`)
+    const response=await axios.get(`https://finddoc.onrender.com/booking/doctorbooking/${id}`)
     setpatientsinfo(response.data)
     
   }
@@ -60,7 +60,7 @@ const getdoctorid =async()=>{
 
 
 const deleteappointment=async(id)=>{
-  const response=await axios.delete(`http://localhost:4000/booking/${id}`)
+  const response=await axios.delete(`https://finddoc.onrender.com/booking/${id}`)
   console.log(response.data)
   window.location.reload()
 }

@@ -25,7 +25,7 @@ function Login() {
 
   const login = async () => {
     const data = { email: EmailLogin, password: passwordLogin };
-    const response = await axios.post(`http://localhost:4000/users/login`, data);
+    const response = await axios.post(`https://finddoc.onrender.com/users/login`, data);
     console.log(response.data.message);
     console.log(response.data);
     if (response.data.message === 'Welcome!') {
@@ -53,7 +53,7 @@ function Login() {
 
 const Register=async()=>{
   const data={email:RegEmail,password:RegPassword,phone:RegPhone,name:RegName,role:registrationrole}
-  const response=await axios.post(`http://localhost:4000/users/`,data)
+  const response=await axios.post(`https://finddoc.onrender.com/users/`,data)
   if(response.data.message=="User created successfully."){
     toast.success(response.data.message, { position: toast.POSITION.TOP_RIGHT });
     sessionStorage.setItem('userID', JSON.stringify(response.data._id));

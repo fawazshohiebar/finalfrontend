@@ -12,7 +12,7 @@ export const Carousel = () => {
   const [specielties, setSpecielties] = useState([]);
 
   const getSpecielties = async () => {
-    const response = await axios.get(`http://localhost:4000/subcategory/categoryid/64648d8a857265df115fc6ce`);
+    const response = await axios.get(`https://finddoc.onrender.com/subcategory/categoryid/64648d8a857265df115fc6ce`);
     console.log(response.data);
     setSpecielties(response.data);
   };
