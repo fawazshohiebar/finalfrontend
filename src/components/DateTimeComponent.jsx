@@ -10,37 +10,39 @@ import { useParams } from 'react-router-dom';
 function DateTimeComponent() {
   const { id } = useParams();
   const [selectedDate, setSelectedDate] = useState();
-  const [selectedDatee,setselectedDatee]=useState()
+  const [selectedDatee, setselectedDatee] = useState();
   const userID = sessionStorage.getItem('userID');
-  const[user,setuser]=useState(userID)
+  const [user, setuser] = useState(userID);
   const handleDateChange = (date) => {
     if (date) {
       setSelectedDate(date.toLocaleString());
-      setselectedDatee(date)
-
+      setselectedDatee(date);
     }
   };
-  
+
+  const handleInputFocus = (e) => {
+    e.preventDefault();
+    e.target.blur(); // Remove focus from the input field
+  };
 
   const Book = async () => {
-    if(!selectedDate){
-      toast.error("please  enter the date ");
-    } else if(!user){
-      toast.error("please  Sign in ");
-    }
-    else{
-    try {
-      const response = await axios.post('https://finddoc.onrender.com//booking', {
-        date: selectedDate,
-        User_ID: user,
-        Doctor_ID: id,
-      });
+    if (!selectedDate) {
+      toast.error('Please enter the date');
+    } else if (!user) {
+      toast.error('Please sign in');
+    } else {
+      try {
+        const response = await axios.post('https://finddoc.onrender.com//booking', {
+          date: selectedDate,
+          User_ID: user,
+          Doctor_ID: id,
+        });
 
-      toast.success('Appointment booked successfully!', { position: toast.POSITION.TOP_RIGHT });
-    } catch (error) {
-      toast.error(error.response.data.message);
+        toast.success('Appointment booked successfully!', { position: toast.POSITION.TOP_RIGHT });
+      } catch (error) {
+        toast.error(error.response.data.message);
+      }
     }
-  }
   };
 
   return (
@@ -52,6 +54,7 @@ function DateTimeComponent() {
         placeholderText='Pick a Date'
         selected={selectedDatee}
         onChange={handleDateChange}
+        onFocus={handleInputFocus} // Add the onFocus event handler to prevent the keyboard from showing
         showTimeSelect
         timeFormat='HH:mm'
         timeIntervals={30}
@@ -59,7 +62,9 @@ function DateTimeComponent() {
         minTime={new Date().setHours(9, 0)} // Set the minimum time to 9:00 am
         maxTime={new Date().setHours(17, 0)} // Set the maximum time to 5:00 pm
       />
-      <button className='booking-button' onClick={() => Book()}>Book the appointment</button>
+      <button className='booking-button' onClick={Book}>
+        Book the appointment
+      </button>
     </div>
   );
 }
