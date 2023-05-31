@@ -22,7 +22,7 @@ export default function AllDoctors() {
 const [alldoctors,setalldoctors]=useState()
 
 const getalldoctors = async () => {
-  const response = await axios.get(`https://finddoc.onrender.com//doctor/bysubcategory/${id}`);
+  const response = await axios.get(`https://finddoc.onrender.com/doctor/bysubcategory/${id}`);
   console.log(response.data);
 
   if (response.data.length === 0) {
