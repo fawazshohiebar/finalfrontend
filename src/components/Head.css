@@ -111,7 +111,7 @@ z-index: 90;
     border-radius: 0.25em;
     transform: translateX(-10%);
     transition: transform 100ms ease-in-out, opacity 200ms;
-}
+    visibility: hidden; /* Add this line to initially hide the menu items */}
 
 .menu-items li{
     color: white;
@@ -134,8 +134,8 @@ z-index: 90;
 }
 
 .hidden-checkbox:checked~.menu-items {
-    display: block;
-    transform: translateX(0%);
+    visibility: visible; /* Change display: block; to visibility: visible; */
+        transform: translateX(0%);
     opacity: 1;
 }
 
