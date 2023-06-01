@@ -5,6 +5,41 @@ import insta from "../images/instagram-fill.svg"
 import twitter from "../images/twitter.svg"
 import facebook from "../images/facebook.svg"
 function Footer() {
+
+
+  const handleinsta = () => {
+
+  
+  
+    // Navigate to the link in the current tab/window
+    window.location.href = 'https://www.instagram.com/'; // Replace 'https://example.com' with the desired URL
+  };
+
+
+
+  const handletwitter = () => {
+
+  
+  
+    // Navigate to the link in the current tab/window
+    window.location.href = 'https://twitter.com/'; // Replace 'https://example.com' with the desired URL
+  };
+
+
+
+  const handlefacebook = () => {
+
+  
+  
+    // Navigate to the link in the current tab/window
+    window.location.href = ' https://www.facebook.com/'; // Replace 'https://example.com' with the desired URL
+  };
+
+ 
+
+
+
+
   return (
     <div className='footer-container'>
         
@@ -27,9 +62,9 @@ Lebanon biggest website for Doctors  and Medical serveices
 <div className='third-footer-section'>
     <h1>Our Socials</h1>
     <div className='display-flex-row-nowrap gap'>
-        <img className='social' src={insta} alt="" />
-        <img className='social' src={twitter} alt="" />
-        <img className='social' src={facebook} alt="" />
+        <img onClick={()=>handleinsta()} className='social' src={insta} alt="" />
+        <img onClick={()=>handletwitter()} className='social' src={twitter} alt="" />
+        <img  onClick={()=>handlefacebook()} className='social' src={facebook} alt="" />
     </div>
      </div>
 
