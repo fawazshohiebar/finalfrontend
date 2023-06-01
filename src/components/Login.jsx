@@ -91,7 +91,7 @@ const Register=async()=>{
               <label className='login-label'>Password</label>
               <input
                 className='login-input'
-                type='text'
+                type='password'
                 value={passwordLogin}
                 onChange={(e) => setpasswordLogin(e.target.value)}
               />
@@ -130,7 +130,7 @@ const Register=async()=>{
               <label className='registration-label'>Password</label>
               <input
                 className='registraion-inputs'
-                type='text'
+                type='password'
                 value={RegPassword}
                 onChange={(e) => setRegPassword(e.target.value)}
               />
