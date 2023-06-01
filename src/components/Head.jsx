@@ -66,7 +66,7 @@ function Head() {
 {userID ? (
             <h2 className='loged-in' onClick={handleLogout}>Sign out</h2>
             ) : (
-              <Link to="/Login" className='loged-in'>
+              <Link to="/Login" className='loged-in-sign'>
                 <h2 className='loged-in-Signin'>Sign in</h2>
               </Link>
           )}

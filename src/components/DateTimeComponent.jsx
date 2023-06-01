@@ -32,7 +32,7 @@ function DateTimeComponent() {
       toast.error('Please sign in');
     } else {
       try {
-        const response = await axios.post('https://finddoc.onrender.com//booking', {
+        const response = await axios.post('https://finddoc.onrender.com/booking', {
           date: selectedDate,
           User_ID: user,
           Doctor_ID: id,

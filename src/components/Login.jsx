@@ -57,6 +57,10 @@ const Register=async()=>{
     toast.success(response.data.message, { position: toast.POSITION.TOP_RIGHT });
     sessionStorage.setItem('userID', JSON.stringify(response.data._id));
     sessionStorage.setItem('role', JSON.stringify(response.data.role));
+    setTimeout(() => {
+      navigate(`/`);
+    }, 3000); // Wait for 2 seconds (2000 milliseconds) before navigating
+
 
   }else{
   console.log(response.data.message) 
