@@ -22,6 +22,23 @@
     width: 90%;
     background-color: #F6F7FF;
 }
+
+
+.loading-spinner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
 .image-doctorsss {
     border: 1px solid grey;
     border-radius: 50%;
