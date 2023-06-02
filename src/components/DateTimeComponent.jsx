@@ -6,6 +6,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { useParams } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
+
 
 function DateTimeComponent() {
   const { id } = useParams();
@@ -13,6 +15,17 @@ function DateTimeComponent() {
   const [selectedDatee, setselectedDatee] = useState();
   const userID = sessionStorage.getItem('userID');
   const [user, setuser] = useState(userID);
+
+  function decryptDatanostring(encryptedData, secretKey) {
+    const decryptedBytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
+    const decryptedData = JSON.parse(decryptedBytes.toString(CryptoJS.enc.Utf8));
+    console.log(decryptedData)
+    return decryptedData;
+
+  }
+
+
+
   const handleDateChange = (date) => {
     if (date) {
       setSelectedDate(date.toLocaleString());
@@ -31,10 +44,15 @@ function DateTimeComponent() {
     } else if (!user) {
       toast.error('Please sign in');
     } else {
+     const useid= decryptDatanostring(user,"dana")
+
+
+
+
       try {
         const response = await axios.post('https://finddoc.onrender.com/booking', {
           date: selectedDate,
-          User_ID: user,
+          User_ID: useid,
           Doctor_ID: id,
         });
 

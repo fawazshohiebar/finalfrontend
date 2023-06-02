@@ -4,14 +4,27 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
+
 import Head from './Head';
+
 function Login() {
-  const [menubar, setMenuBar]= useState(false);
+  const [menubar, setMenuBar] = useState(false);
+
+  function encryptData(data) {
+    const secretKey = 'dana'; // Replace with your secret key
+
+    // Encrypt using AES algorithm and secret key
+    const encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), secretKey).toString();
+
+    return encrypted;
+  }
 
   const flipCard = () => {
     var flipCard = document.querySelector('.flip-card');
     flipCard.classList.toggle('flipped');
   };
+
   const navigate = useNavigate();
 
   const [EmailLogin, setEmailLogin] = useState('');
@@ -29,129 +42,122 @@ function Login() {
     console.log(response.data);
     if (response.data.message === 'Welcome!') {
       toast.success(response.data.message, { position: toast.POSITION.TOP_RIGHT });
-      sessionStorage.setItem('userID', response.data._id);
-      sessionStorage.setItem('role', response.data.role);
-      if(response.data.role=="superadmin"){
+      sessionStorage.setItem('userID', encryptData(response.data._id));
+      sessionStorage.setItem('role', encryptData(response.data.role));
+      if (response.data.role === 'superadmin') {
         navigate('/Dashboard');
+      } else if (response.data.role === 'Doctor') {
+        navigate(`/DoctorDash`);
+      } else if (response.data.role === 'user') {
+        navigate(`/`);
       }
-      else if(response.data.role=="Doctor"){
-        navigate(`/DoctorDash`)
-      }
-      else if(response.data.role=="user"){
-        navigate(`/`)
-      }
-
-
-
-    
     } else {
       toast.error(response.data.message, { position: toast.POSITION.TOP_RIGHT });
     }
   };
 
-
-const Register=async()=>{
-  const data={email:RegEmail,password:RegPassword,phone:RegPhone,name:RegName,role:registrationrole}
-  const response=await axios.post(`https://finddoc.onrender.com/users/`,data)
-  if(response.data.message=="User created successfully."){
-    toast.success(response.data.message, { position: toast.POSITION.TOP_RIGHT });
-    sessionStorage.setItem('userID', JSON.stringify(response.data._id));
-    sessionStorage.setItem('role', JSON.stringify(response.data.role));
-    setTimeout(() => {
-      navigate(`/`);
-    }, 3000); // Wait for 2 seconds (2000 milliseconds) before navigating
-
-
-  }else{
-  console.log(response.data.message) 
-  toast.error(response.data.message, { position: toast.POSITION.TOP_RIGHT });
-}}
+  const Register = async () => {
+    const data = { email: RegEmail, password: RegPassword, phone: RegPhone, name: RegName, role: registrationrole };
+    const response = await axios.post(`https://finddoc.onrender.com/users/`, data);
+    if (response.data.message === 'User created successfully.') {
+      toast.success(response.data.message, { position: toast.POSITION.TOP_RIGHT });
+      sessionStorage.setItem('userID', encryptData(JSON.stringify(response.data._id)));
+      sessionStorage.setItem('role', encryptData(JSON.stringify(response.data.role)));
+      setTimeout(() => {
+        navigate(`/`);
+      }, 3000); // Wait for 2 seconds (2000 milliseconds) before navigating
+    } else {
+      console.log(response.data.message);
+      toast.error(response.data.message, { position: toast.POSITION.TOP_RIGHT });
+    }
+  };
 
   return (
     <div>
-      <Head/>
-  
-       <div className='container-login-registration'>
-     
-      <ToastContainer />
-      <div className='flip-card'>
-        <div className='flip-card-inner'>
-          <div className='flip-card-front'>
-            <h2 className='Login-header'>Login</h2>
-            <br />
-            <div className='inputs-login'>
-              <label className='login-label'>Email</label>
-              <input
-                className='login-input'
-                type='text'
-                value={EmailLogin}
-                onChange={(e) => setEmailLogin(e.target.value)}
-              />
+      <Head />
 
-              <label className='login-label'>Password</label>
-              <input
-                className='login-input'
-                type='password'
-                value={passwordLogin}
-                onChange={(e) => setpasswordLogin(e.target.value)}
-              />
-
+      <div className='container-login-registration'>
+        <ToastContainer />
+        <div className='flip-card'>
+          <div className='flip-card-inner'>
+            <div className='flip-card-front'>
+              <h2 className='Login-header'>Login</h2>
               <br />
+              <div className='inputs-login'>
+                <label className='login-label'>Email</label>
+                <input
+                  className='login-input'
+                  type='text'
+                  value={EmailLogin}
+                  onChange={(e) => setEmailLogin(e.target.value)}
+                />
 
-              <div className='display-flex-row gap'>
-                <button className='register-clicker' onClick={() => login()}>
-                  Login
+                <label className='login-label'>Password</label>
+                <input
+                  className='login-input'
+                  type='password'
+                  value={passwordLogin}
+                  onChange={(e) => setpasswordLogin(e.target.value)}
+                />
+
+                <br />
+
+                <div className='display-flex-row gap'>
+                  <button className='register-clicker' onClick={() => login()}>
+                    Login
+                  </button>
+                  <button className='register-clicker' onClick={() => flipCard()}>
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className='flip-card-back'>
+              <div className='inner-registration'>
+                <h2>Register</h2>
+              </div>
+              <div className='inner-registration-inputs'>
+                <label className='registration-label'>Name</label>
+                <input
+                  className='registraion-inputs'
+                  type='text'
+                  value={RegName}
+                  onChange={(e) => setRegName(e.target.value)}
+                />
+                <label className='registration-label'>Email</label>
+                <input
+                  className='registraion-inputs'
+                  type='text'
+                  value={RegEmail}
+                  onChange={(e) => setRegEmail(e.target.value)}
+                />
+                <label className='registration-label'>Password</label>
+                <input
+                  className='registraion-inputs'
+                  type='password'
+                  value={RegPassword}
+                  onChange={(e) => setRegPassword(e.target.value)}
+                />
+                <label className='registration-label'>Phone</label>
+                <input
+                  className='registraion-inputs'
+                  type='number'
+                  value={RegPhone}
+                  onChange={(e) => setRegPhone(e.target.value)}
+                />
+              </div>
+              <div className='display-flex-row gap clickers-registration'>
+                <button className='register-clicker' onClick={() => Register()}>
+                  Submit
                 </button>
                 <button className='register-clicker' onClick={() => flipCard()}>
-                  Register
+                  Login
                 </button>
               </div>
             </div>
           </div>
-          <div className='flip-card-back'>
-            <div className='inner-registration'>
-              <h2>Register</h2>
-            </div>
-            <div className='inner-registration-inputs'>
-              <label className='registration-label'>Name</label>
-              <input
-                className='registraion-inputs'
-                type='text'
-                value={RegName}
-                onChange={(e) => setRegName(e.target.value)}
-              />
-              <label className='registration-label'>Email</label>
-              <input
-                className='registraion-inputs'
-                type='text'
-                value={RegEmail}
-                onChange={(e) => setRegEmail(e.target.value)}
-              />
-              <label className='registration-label'>Password</label>
-              <input
-                className='registraion-inputs'
-                type='password'
-                value={RegPassword}
-                onChange={(e) => setRegPassword(e.target.value)}
-              />
-              <label className='registration-label'>Phone</label>
-              <input
-                className='registraion-inputs'
-                type='number'
-                value={RegPhone}
-                onChange={(e) => setRegPhone(e.target.value)}
-              />
-            </div>
-            <div className='display-flex-row gap clickers-registration'>
-              <button className='register-clicker' onClick={()=>Register()}>Submit</button>
-              <button className='register-clicker' onClick={() => flipCard()}>
-                Login
-              </button>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

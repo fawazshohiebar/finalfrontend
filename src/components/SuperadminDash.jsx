@@ -1,95 +1,67 @@
-// import React from 'react'
-// import { Link } from "react-router-dom";
-
-// function SuperadminDash() {
-//   return (
-//     <div>
-
-
-
-// <Link to={'/AddDoctors'}>Add Doctors Page</Link>
-
-
-// <Link to={'/Dashboard'}>Medical dashboard</Link>
-
-
-
-//     </div>
-//   )
-// }
-
-// export default SuperadminDash
-
-import React from 'react';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserMd, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import './SuperadminDash.css';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-
+import CryptoJS from 'crypto-js';
 
 function SuperadminDash() {
   const navigate = useNavigate();
-  const [role,setrole]=useState()
+  const [role, setRole] = useState();
 
-  
-
-  function checkUserRole() {
-    const userRole = sessionStorage.getItem('role');
-
-
-
-    // Get the user's role from session storage
-    if ( userRole !== 'superadmin'||!userRole) {
-      // User has the 'user' role, so navigate to the desired page
-
-      navigate("/", { replace: true });
-    }
+  function decryptData(encryptedData, secretKey) {
+    const decryptedBytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
+    const decryptedData = decryptedBytes.toString(CryptoJS.enc.Utf8);
+    return decryptedData;
   }
 
 
+  const checkUserRole = () => {
+    const encryptedUserRole = sessionStorage.getItem('role');
+    const secretKey = 'dana'; // Replace with your secret key
 
+    if (encryptedUserRole) {
+      // Decrypt the encrypted user role
+      const decryptedUserRole = decryptData(encryptedUserRole, secretKey);
+    
 
- const clearSession = () => {
-  sessionStorage.removeItem('role');
-  sessionStorage.removeItem('userID');
-  checkUserRole()
-};
-
-setTimeout(clearSession, 1800000); // 30 minutes
-
-
-
-
+      if (decryptedUserRole !== '"superadmin"') {
+        // User has the 'user' role or no role, so navigate to the desired page
+        navigate('/', { replace: true });
+   
+        
+      } else {
+        // encryptedUserRole is not available, handle the case accordingly
+        
+      }
+      
+    }
+  };
 
   useEffect(() => {
-    checkUserRole()
-    }, []);
 
+
+    checkUserRole();
+
+
+  }, []);
 
   return (
     <div className="navbar">
-
-      <Link to="/AddDoctors" className="navbar-link1" activeClassName="active">
-        <FontAwesomeIcon icon={faUserMd} className="navbar-icon" />
+      <Link to="/AddDoctors" className="navbar-link1" >
+        <FontAwesomeIcon icon={faChartLine} className="navbar-icon" />
         Add Doctors Page
       </Link>
 
-      <Link to="/Dashboard" className="navbar-link1" activeClassName="active">
-        <FontAwesomeIcon icon={faChartLine} className="navbar-icon" />
+      <Link to="/Dashboard" className="navbar-link1" >
+        <FontAwesomeIcon icon={faUserMd} className="navbar-icon" />
         Medical Services
       </Link>
 
-
-
-
- <Link to="/Specieltiesdash" className="navbar-link1" activeClassName="active">
+      <Link to="/Specieltiesdash" className="navbar-link1" >
         <FontAwesomeIcon icon={faUserMd} className="navbar-icon" />
         Specielties Dashboard
       </Link>
-
     </div>
   );
 }

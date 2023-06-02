@@ -22,7 +22,6 @@ const [titlecat,settitlecat]=useState()
     const [Specielties, setSpecielties] = useState();
     const getSpecielties = async () => {
       const response = await axios.get(`https://finddoc.onrender.com/subcategory/categoryid/64648d6f857265df115fc6cc`);
-      console.log(response.data);
       setSpecielties(response.data);
     };
 
@@ -48,7 +47,6 @@ const [titlecat,settitlecat]=useState()
             },
           });
       
-          console.log('Upload success:', response.data);
         } catch (error) {
           console.error('Upload error:', error);
         }
@@ -77,7 +75,6 @@ const[doctoorinfo,setdoctorinfo]=useState()
 
 const getdoctorinfo=async(id)=>{
     const response=await axios.get(`https://finddoc.onrender.com/doctor/doctor/${id}`)
-console.log("halaaaa",response.data)
 setdoctorinfo(response.data)
 }
 
@@ -98,7 +95,6 @@ setdoctorinfo(response.data)
 const editdoctorinfo=async()=>{
     const data={location:editlocation,yearsofexp:edityearsofexp,description:editdescription}
     const response=await axios.put(`https://finddoc.onrender.com/doctor/edit/${editdoctorid}`,data)
-    console.log("the doctor info editied successfully")
 
 }
 
@@ -108,7 +104,6 @@ const editdoctorinfo=async()=>{
 
     const getalldoctors=async(id)=>{
       const response =await  axios.get(`https://finddoc.onrender.com/doctor/bysubcategory/${id}`)
-      console.log(response.data)
       setalldoctors(response.data)
     }
 
@@ -117,7 +112,6 @@ const editdoctorinfo=async()=>{
 
     const deletedoctor=async(id)=>{
 const response=await axios.delete(`https://finddoc.onrender.com/doctor/delete/${id}`)
-console.log(response.data)
     }
     
 
@@ -190,7 +184,7 @@ console.log(response.data)
                         <Collapsible
                             className='collaps-title'
                             trigger={item.title}
-                            key={item.id}
+                            key={item._id}
                             open={index === openIndex}
                             onOpening={() => { getalldoctors(item._id); setOpenIndex(index) }}
                             onClosing={() => setOpenIndex(-1)}
@@ -199,7 +193,7 @@ console.log(response.data)
 
 
                             {alldoctors && alldoctors.map((product) => (
-                                <div className='content-dashboard' key={product.id}>
+                                <div className='content-dashboard' key={product._id}>
                                     <p className='parag-dash-content'>{product.User_ID.name}</p>
                                     <div className='flex-content-end'>
                                         <button className='background-none' onClick={() => {getdoctorinfo(product._id);OpenEditProducts();seteditdoctorid(product._id)}}>
@@ -226,11 +220,11 @@ console.log(response.data)
 
                 <h1>Add Category </h1>
 
-                <label for="email"><b>title</b></label>
+                <label ><b>title</b></label>
                 <input type="text" placeholder="Enter Email" name="email"   value={titlecat} onChange={(e) => settitlecat(e.target.value)} />
                 <br />
 
-                <label for="psw"><b>image</b></label>
+                <label ><b>image</b></label>
                 <input type="file"   onChange={handleimage} />
                 <br />
 
@@ -270,8 +264,7 @@ console.log(response.data)
             <div className="form-popup" id="editproductform">
 
 <h1>Edit  Doctors information </h1>
-{/* {productsdata&&productsdata.map((item, index) => (
-<> */}
+
 <label ><b>Name</b></label>
 <input type="text" placeholder={doctoorinfo && doctoorinfo[0].User_ID.name} name="title" required onChange={(e) => { seteditname(e.target.value) }} />
 <br />
