@@ -32,3 +32,25 @@
   margin-right: 5%;
 
 }
+@media screen and (max-width: 1080px) {
+  .container-card-doctordash{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1%;
+    width: 80%;
+    padding-left: 10%;
+  }
+  .card-doctor-dash{
+    background-color: #3281b1;
+    height: auto;
+    padding-bottom: 1%;
+    width: 100%;
+    padding-left: 1%;
+    text-align: left;
+    border-radius: 1vw;
+    color: white;
+  
+  }
+}
+
