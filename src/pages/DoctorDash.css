@@ -52,5 +52,15 @@
     color: white;
   
   }
+  .btn-doc {
+    border: 1px solid Red;
+    border-radius: 2.5vw;
+    height: 9vw;
+    background-color: white;
+    color: Red;
+    font-weight: 600;
+    float: right;
+    margin-right: 5%;
+}
 }
 
