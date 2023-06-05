@@ -188,7 +188,7 @@ width: 60%;
     .drpage-con {
         padding-top: 2%;
         background-color: #F6F7FF;
-        height: 150vh;
+        height: auto;
         padding-left: 7%;
         width: 92%;
         padding-bottom: 3%;
